@@ -45,7 +45,6 @@ def uploadPhoto(request):
 
         # 生成新的文件名
         newFileName = str(uuid.uuid4()).replace('-', '')+'.'+uploadFile.name.split('.')[-1]
-s
         # 确定生成新的文件的目录
         dirPath = os.path.join(settings.BASE_DIR, 'static/users/photo/')
         if not os.path.exists(dirPath):  # 判断目录是否存在
