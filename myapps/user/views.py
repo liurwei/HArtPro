@@ -41,11 +41,11 @@ def regist(request):
 def uploadPhoto(request):
     # 上传头像-> request.FILES 字典中 ｛'字段名': InMemoryUploadedFile｝
     if request.method == 'POST':
-        uploadFile:InMemoryUploadedFile = request.FILES.get('photoImg')  # 上传文件表单的字段名为photoImg
+        uploadFile = request.FILES.get('photoImg')  # 上传文件表单的字段名为photoImg
 
         # 生成新的文件名
         newFileName = str(uuid.uuid4()).replace('-', '')+'.'+uploadFile.name.split('.')[-1]
-
+s
         # 确定生成新的文件的目录
         dirPath = os.path.join(settings.BASE_DIR, 'static/users/photo/')
         if not os.path.exists(dirPath):  # 判断目录是否存在
